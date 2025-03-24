@@ -42,6 +42,14 @@ The project consists of a frontend and backend to search and display names using
 - Identified key insights and patterns in the data.
 - The external API has rate limits, so implementing retry logic and rate limiting was crucial.
 - Fetching all names took a significant amount of time due to the large number of requests.
+- There are three versions of the data:
+  - **Version 1:** Contains only alphabets.
+  - **Version 2:** Contains alphabets and numbers.
+  - **Version 3:** Contains alphabets, numbers, and special characters (+, -, , , . etc.).
+- Queries:
+  - **Version 1:** Supports `a-z`, `aa-zz`, `aaa-zzz` (only alphabets).
+  - **Version 2:** Supports `a-z`, `aa-zz`, `0-9`, `00-99` (alphabets and numbers).
+  - **Version 3:** Supports `a-z`, `aa-zz`, `0-9`, `00-99`, and special characters (+, -, , , . etc.).
 - Have 3 versions and the prefix is varying up to the first 3 characters.
 - Time taken by one response is around 70-100ms.
 - Requests processed (Without Rate Limiting): 100.
@@ -63,9 +71,9 @@ The total number of requests made to the API depends on the number of character 
 ## Total Number of Records Obtained from the API
 
 There are 3 versions of data, each version having a different number of records:
-- Version "v1": 10,009 records
-- Version "v2": 4,345 records
-- Version "v3": 3,417 records
+- **Version 1:** 10,009 records (only alphabets)
+- **Version 2:** 4,345 records (alphabets and numbers)
+- **Version 3:** 3,417 records (alphabets, numbers, and special characters)
 
 ## How to Run the Script
 
@@ -104,4 +112,3 @@ There are 3 versions of data, each version having a different number of records:
    ```
 
 4. Open your browser and navigate to `http://localhost:3000` to view the application.
-
